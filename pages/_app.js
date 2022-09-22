@@ -4,7 +4,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { CacheProvider } from "@emotion/react";
 import createEmotionCache from "./src/createEmotionCache";
-import theme from "./src/Theme";
+import theme from "./src/theme";
 import "../styles/globals.css";
 import Head from "next/head";
 
