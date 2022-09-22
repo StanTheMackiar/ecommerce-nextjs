@@ -1,0 +1,72 @@
+.headerTop {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    background-color: rgb(35, 112, 228);
+}
+.containerLeft, .containerRight {
+    display: flex;
+    color: white;
+    background-color: rgb(35, 112, 228);
+    justify-content: space-around;
+    align-items: center;
+
+}
+.link {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+}
+.link:link, .link:visited, .link:active {
+    text-decoration: none;
+    color: inherit;
+}
+.toggle {
+    display: none;
+    padding: 0 0.5rem;
+}
+.title {
+    font-size: 18px;
+    margin: 0 0.5rem;
+    padding: 0 0.5rem;
+}
+.h1 {
+    margin: 0 0.5rem;
+}
+.nav {
+    display: flex;
+    align-items: center;
+    margin: 0 1rem;
+}
+
+.cart {
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    align-items: center;
+    width: 3.5em;
+    height: 3.5em;
+    text-align: center;
+    cursor: pointer;
+}
+.cart:hover {
+    transition: 0.3s ease-out;
+    background-color: rgb(30, 92, 185);
+}
+
+@media (max-width: 800px) {
+    .toggle {
+        display: inline;
+    }
+    .cart {
+        padding:  0 1rem;
+    }
+    .nav {
+        display: none;
+    }
+    .searchBar {
+        display: none;
+    }
+
+}

@@ -1,0 +1,48 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-bottom: thin solid lightblue;
+    margin-bottom: 1rem;
+}
+.nav {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 0 1rem;
+}
+.link {
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    width: 8rem;
+    text-align: center;
+    color: rgb(35, 112, 228);
+    border-bottom: 4px solid white; 
+}
+.link:link, .link:visited {
+    text-decoration: none;
+    color: inherit;
+}
+.link:hover {
+    color: rgb(35, 112, 228);
+    border-bottom: 4px solid rgb(35, 112, 228); 
+}
+
+.searchBar {
+    display: none;
+}
+.cart {
+    padding-right: 2rem;
+}
+
+@media (max-width: 800px) {
+    .nav {
+        display: none;
+    }
+    .searchBar {
+        display: block;
+        padding: 1rem;
+    }
+}

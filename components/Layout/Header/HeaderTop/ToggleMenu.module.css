@@ -1,0 +1,10 @@
+.login {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(41, 110, 212);
+    color: white;
+    padding: 1rem;
+}
