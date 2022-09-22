@@ -12,22 +12,33 @@
     justify-content: center;
     margin: 0 1rem;
 }
-.link {
-    color: white;
-    text-decoration: none;
+.category {
+    padding: 1rem;
     padding: 1rem;
     width: 8rem;
     text-align: center;
-    color: rgb(35, 112, 228);
-    border-bottom: 4px solid white; 
+    border-bottom: 4px solid white;
+    cursor: pointer;
 }
-.link:link, .link:visited {
-    text-decoration: none;
-    color: inherit;
-}
-.link:hover {
+.category:hover {
+    transition: all 0.3s ease;
     color: rgb(35, 112, 228);
     border-bottom: 4px solid rgb(35, 112, 228); 
+}
+.list {
+    width: 8rem;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(173, 216, 230, 0.664);
+    border-radius: 0 0 0.3rem 0.3rem;
+}
+.listElement {
+    display: block;
+    width: 100%;
+}
+.listElement:hover {
+    color: rgb(30, 92, 185);
+    font-weight: bold;
 }
 
 .searchBar {

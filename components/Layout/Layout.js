@@ -14,7 +14,9 @@ export default function Layout({ children, title = "Home", content }) {
         />
       </Head>
       <Header/>
-      <Main />
+      <Main>
+        {children}
+      </Main>
       <Footer />
     </section>
   );

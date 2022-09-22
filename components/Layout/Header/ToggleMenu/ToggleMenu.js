@@ -3,18 +3,16 @@ import Link from "next/link";
 
 import {
   Box,
-  Divider,
   Drawer,
   List,
   ListItemButton,
   ListItemText,
-  Paper,
   Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import styles from "../ToggleMenu.module.css";
+import styles from "./ToggleMenu.module.css";
 import {
   Accordion,
   AccordionDetails,
@@ -64,9 +62,9 @@ const ToggleMenu = () => {
             <List
               component="nav"
               aria-label="categories">
-              {category.type.map((type) => (
-                <ListItemButton key={type}>
-                  <ListItemText primary={type} />
+              {category.type.map((el) => (
+                <ListItemButton key={el.name + 'list'}>
+                  <Link href={el.url}><a><ListItemText primary={el.name}/></a></Link>
                 </ListItemButton>
               ))}
             </List>

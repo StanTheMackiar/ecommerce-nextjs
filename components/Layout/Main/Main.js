@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import styles from "./Main.module.css";
 
-const Main = ({children}) => {
-  return (
-    <main>{children}</main>
-  )
-}
+const Main = ({ children }) => {
+  return <main className={styles.container}>{children}</main>;
+};
 
-export default Main
+export default Main;

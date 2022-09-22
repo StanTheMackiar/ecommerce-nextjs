@@ -4,6 +4,8 @@
     width: 100%;
     justify-content: space-between;
     background-color: rgb(35, 112, 228);
+    position: sticky;
+    z-index: 999;
 }
 .containerLeft, .containerRight {
     display: flex;
@@ -11,6 +13,7 @@
     background-color: rgb(35, 112, 228);
     justify-content: space-around;
     align-items: center;
+    z-index: 500;
 
 }
 .link {
@@ -24,15 +27,23 @@
 }
 .toggle {
     display: none;
-    padding: 0 0.5rem;
+    padding: 0 1rem;
 }
 .title {
     font-size: 18px;
     margin: 0 0.5rem;
-    padding: 0 0.5rem;
 }
 .h1 {
     margin: 0 0.5rem;
+    color: white;
+}
+.h1Span {
+    background-color: rgb(30, 92, 185);
+    font-size: 1.1em;
+    padding: 0.5rem 0.8rem;
+    margin-right:  0.5rem;
+    border-radius: 0.2rem;
+    color: yellow;
 }
 .nav {
     display: flex;
@@ -43,6 +54,7 @@
 .cart {
     display: flex;
     justify-content: center;
+    margin: 0 1rem;
     border-radius: 50%;
     align-items: center;
     width: 3.5em;
@@ -61,6 +73,9 @@
     }
     .cart {
         padding:  0 1rem;
+    }
+    .cart:hover {
+        background-color: inherit;
     }
     .nav {
         display: none;
