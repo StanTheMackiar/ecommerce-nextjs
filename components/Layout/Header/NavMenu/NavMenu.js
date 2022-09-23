@@ -24,6 +24,9 @@ const NavMenu = () => {
   return (
     <section className={styles.container}>
       <nav className={styles.nav}>
+          <div className={styles.category}>
+              <Link href='/store'><a><span>All Products</span></a></Link>
+            </div>
         {categories.map((category, index) => (
           <div
             key={index + "nav"}
@@ -32,7 +35,6 @@ const NavMenu = () => {
             <div className={styles.category}>
               <span>{category.name}</span>
             </div>
-
             <Fade
               in={Boolean(toggle.state) && toggle.id === index}
               timeout={400}

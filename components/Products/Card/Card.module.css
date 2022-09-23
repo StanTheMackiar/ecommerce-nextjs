@@ -1,0 +1,20 @@
+.latestItems {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 0 10px rgba(173, 216, 230, 0.877);
+}
+.latestItems:hover {
+    transition: 0.3s e;
+    box-shadow: 0 5px 10px 5px rgb(173, 216, 230);
+}
+.name {
+    color: rgb(30, 92, 185);
+    margin: 0.5rem;
+}
+.price {
+    margin: 0.5rem;
+}

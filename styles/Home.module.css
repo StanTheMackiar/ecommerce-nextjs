@@ -1,23 +1,14 @@
-
-
-
 .latestSection {
     text-align: center;
 }
 .latestGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
-    gap: 1rem; 
+    grid-template-columns: repeat(auto-fit, minmax(13em, 1fr));
+    gap: 2rem; 
 }
-.latestItems {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 0.5rem;
-    padding: 1rem;
-    box-shadow: 0 0 10px rgba(173, 216, 230, 0.877);
-}
-.name {
-    color: rgb(30, 92, 185);
+@media (max-width: 800px) {
+    .latestGrid {
+        grid-template-columns: repeat(auto-fit, minmax(10.7em, 1fr));
+        gap: 1rem;
+    }
 }

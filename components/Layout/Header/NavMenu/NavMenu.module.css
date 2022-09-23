@@ -31,6 +31,7 @@
     background-color: white;
     box-shadow: 0 0 10px rgba(173, 216, 230, 0.664);
     border-radius: 0 0 0.3rem 0.3rem;
+    z-index: 999;
 }
 .listElement {
     display: block;

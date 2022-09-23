@@ -4,9 +4,6 @@ const nextConfig = {
   images: {
     domains: ['i.pinimg.com'],
   },
-  env: {
-    location: 'http'
-  }
 }
 
 module.exports = nextConfig

@@ -11,20 +11,26 @@ export const categories = [
   },
   {
     name: "Men",
-    type: [{name: "Sportswear", url: "/"}, {name: "Shoes", url: "/"}],
+    type: [
+      { name: "Sportswear", url: "/" },
+      { name: "Shoes", url: "/" },
+    ],
   },
   {
     name: "Women",
-    type: [{name: "Sportswear", url: "/"}, {name: "Shoes", url: "/"}, {name: "Beach clothes", url: '/'}],
+    type: [
+      { name: "Sportswear", url: "/" },
+      { name: "Shoes", url: "/" },
+      { name: "Beach clothes", url: "/" },
+    ],
   },
   {
     name: "Accesories",
-    type: [{name: "Backpacks", url: '/'}],
+    type: [{ name: "Backpacks", url: "/" }],
   },
 ];
 
 export const about = [
+  { name: "All Products", url: "/store" },
   { name: "About", url: "/about" },
-  { name: "Help", url: "/help" },
-  { name: "Contact Us", url: "/contact" },
 ];

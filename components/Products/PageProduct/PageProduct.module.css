@@ -1,0 +1,49 @@
+.container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.image {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    justify-content: center;
+}
+.title {
+    color: rgb(35, 112, 228);
+    margin: 0.5rem;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+.info {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    padding: 1rem;
+    margin: 1rem;
+}
+.price {
+    color: rgb(147, 155, 168);
+    font-size: 25px;
+    margin: 0.5rem;
+}
+.description {
+    text-align: justify;
+}
+.subtitle {
+    margin: 0;
+    text-transform: capitalize;
+}
+
+@media (max-width: 1000px) {
+    .container {
+        flex-direction: column;
+    }
+    .image {
+        width: 100%;
+    }
+    .info {
+        width: 100%;
+    }
+}

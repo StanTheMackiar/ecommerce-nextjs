@@ -1,9 +1,10 @@
+import { productsList } from "../pages/api/products";
 
 
 
 
 export async function getItems(){
-    const products = await fetch('http://localhost:3000/api/products').then(res => res.json())
+    const products = productsList;
     return products
 } 
 
