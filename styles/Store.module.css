@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    flex-direction: row;
+}
+.filterProducts {
+    flex: 1.5;
+}
+.displayedProducts {
+    flex: 8.5;
+}
+.productsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(13em, 1fr));
+    gap: 2rem; 
+}
+
+@media (max-width: 800px) {
+    .container {
+        flex-direction: column;
+    }
+    .productsGrid {
+        grid-template-columns: repeat(auto-fit, minmax(10.7em, 1fr));
+        gap: 1rem;
+    }
+}

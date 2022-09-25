@@ -1,0 +1,11 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.title {
+    grid-column: span 2;
+    margin: 0.5rem;
+}
+.sportsCheckbox {
+  margin: 0.1em;
+}

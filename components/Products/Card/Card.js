@@ -7,6 +7,7 @@ import styles from "./Card.module.css";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 const Card = ({ item }) => {
+
   return (
     <Link href={`/store/${convertToPath(item.name)}`}>
       <a>
@@ -21,7 +22,7 @@ const Card = ({ item }) => {
             alt={item.alt}
           />
           <h3 className={styles.name}>{item.name}</h3>
-          <h4 className={styles.price}>{`$${item.price}.00`}</h4>
+          <h4 className={styles.price}>{`$ ${item.price}`}</h4>
           <Button variant="outlined" endIcon={<AddShoppingCartIcon />}>ADD</Button>
         </div>
       </a>
