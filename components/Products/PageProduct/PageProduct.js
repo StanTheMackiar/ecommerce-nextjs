@@ -1,9 +1,10 @@
 import { Box, Button, Fade, Modal, Rating } from "@mui/material";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styles from "./PageProduct.module.css";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import Backdrop from "@mui/material/Backdrop";
+import shoppingContext from '../../../src/context/shoppingContext'
 
 const styleModal = {
   position: "absolute",
@@ -23,6 +24,8 @@ const PageProduct = ({ item }) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const { addToCart } = useContext(shoppingContext)
 
   return (
     <>
@@ -68,6 +71,7 @@ const PageProduct = ({ item }) => {
           <p className={styles.description}>{item.description}</p>
 
           <Button
+            onClick={() => addToCart(item.id)}
             sx={{ p: "1rem" }}
             variant="contained"
             disableElevation

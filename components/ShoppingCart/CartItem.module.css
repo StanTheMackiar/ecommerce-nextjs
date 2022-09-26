@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    margin: 1rem;
+    padding-bottom: 1.5rem;
+    border-bottom: thin solid lightblue  ;
+}
+.subcontainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0.5rem;
+}
+.image {
+    margin: 1rem;
+    padding: 0.5rem;
+    border: thin solid lightblue;
+    border-radius: 0.5rem;
+}
+.title {
+    margin: 0;
+}
+.buttonsContainer {
+    margin: 1rem;
+}
+.buttons {
+    margin: 0.5rem;
+}
+
+@media (max-width: 800px) {
+    .subcontainer {
+        flex-direction: column;
+        margin: 0;
+    }
+    .children {
+        margin: 0;
+    }
+    .image {
+        margin: 0;
+    }
+    .buttonsContainer {
+        margin: 0;
+    }
+    .buttons {
+        margin: 0;
+        font-size: 12px;
+    }
+}

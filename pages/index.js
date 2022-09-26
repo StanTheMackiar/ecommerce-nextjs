@@ -6,6 +6,7 @@ import { Button } from "@mui/material";
 
 export default function Home({ products }) {
 
+
   return (
     <Layout title="Welcome">
       <h1>Welcome to Sports Store!</h1>
@@ -24,7 +25,8 @@ export default function Home({ products }) {
 }
 
 export async function getStaticProps(context) {
-  const products = await getLatestItems();
+
+  const products = await getLatestItems()
 
   return {
     props: {

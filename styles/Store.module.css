@@ -7,6 +7,7 @@
 }
 .displayedProducts {
     flex: 8.5;
+    margin-left: 1rem;
 }
 .productsGrid {
     display: grid;
@@ -21,5 +22,8 @@
     .productsGrid {
         grid-template-columns: repeat(auto-fit, minmax(10.7em, 1fr));
         gap: 1rem;
+    }
+    .displayedProducts {
+        margin-left: 0;
     }
 }

@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+    text-align: left;
+}
+.children {
+    padding: 0.5rem;
+}
+.total {
+    padding: 0.5rem;
+    font-size: 20px;
+}
+.span {
+    float: right;
+    font-weight: bolder;
+}

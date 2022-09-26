@@ -7,6 +7,8 @@ import createEmotionCache from "../src/createEmotionCache";
 import theme from "../src/theme";
 import "../styles/globals.css";
 import Head from "next/head";
+import { ShoppingProvider } from "../src/context/shoppingContext";
+import { FiltersProvider } from "../src/context/filtersContext";
 
 // Client-side cache shared for the whole session
 // of the user in the browser.
@@ -20,7 +22,7 @@ export default function MyApp(props) {
     <CacheProvider value={emotionCache}>
       <ThemeProvider theme={theme}>
         <Head>
-        <meta
+          <meta
             name="viewport"
             content="initial-scale=1, width=device-width"
           />
@@ -30,7 +32,11 @@ export default function MyApp(props) {
 				build upon. */}
 
         <CssBaseline />
-        <Component {...pageProps} />
+        <FiltersProvider>
+          <ShoppingProvider>
+            <Component {...pageProps} />
+          </ShoppingProvider>
+        </FiltersProvider>
       </ThemeProvider>
     </CacheProvider>
   );

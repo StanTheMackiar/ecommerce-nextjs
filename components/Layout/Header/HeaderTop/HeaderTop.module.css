@@ -14,7 +14,6 @@
     align-items: center;
     z-index: 500;
     position: sticky;
-
 }
 .link {
     color: white;
@@ -57,25 +56,35 @@
     margin: 0 1rem;
     border-radius: 50%;
     align-items: center;
-    width: 3.5em;
-    height: 3.5em;
     text-align: center;
     cursor: pointer;
 }
 .cart:hover {
     transition: 0.3s ease-out;
-    background-color: rgb(30, 92, 185);
+}
+.numberCart {
+    font-size: 10px;
+    position: relative;
+    bottom: 10px;
+    right: 5px;
+    color: rgb(30, 92, 185);
+    font-weight: bolder;
+    background-color: yellow;
+    border: thin solid white;
+    padding: 0 0.4em;
+    border-radius: 50%;
 }
 
 @media (max-width: 800px) {
     .toggle {
         display: inline;
     }
-    .cart {
-        padding:  0 1rem;
+    .containerLeft {
+        width: 100%;
     }
-    .cart:hover {
-        background-color: inherit;
+    .title {
+        flex: auto;
+        text-align: center;
     }
     .nav {
         display: none;

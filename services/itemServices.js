@@ -1,8 +1,6 @@
 import { productsList } from "../pages/api/products";
 
 
-
-
 export async function getItems(){
     const products = productsList;
     return products

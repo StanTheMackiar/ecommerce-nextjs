@@ -3,7 +3,9 @@ import Layout from '../../components/Layout/Layout'
 import PageProduct from '../../components/Products/PageProduct/PageProduct'
 import { getItemData, getPathsFromIDs } from '../../lib/utils'
 
+
 export default function ProductPage ({product}) {
+
     
   return (
     <Layout title={`${product.name}`}>

@@ -1,19 +1,22 @@
 import { Button } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useContext } from "react";
 import { convertToPath } from "../../../lib/utils";
 import styles from "./Card.module.css";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import shoppingContext from "../../../src/context/shoppingContext";
 
 const Card = ({ item }) => {
+  const { addToCart } = useContext(shoppingContext);
+
 
   return (
-    <Link href={`/store/${convertToPath(item.name)}`}>
-      <a>
-        <div
-          key={item.id}
-          className={styles.latestItems}>
+    <div
+      key={item.id}
+      className={styles.latestItems}>
+      <Link href={`/store/${convertToPath(item.name)}`}>
+        <a>
           <Image
             width={150}
             height={150}
@@ -23,10 +26,15 @@ const Card = ({ item }) => {
           />
           <h3 className={styles.name}>{item.name}</h3>
           <h4 className={styles.price}>{`$ ${item.price}`}</h4>
-          <Button variant="outlined" endIcon={<AddShoppingCartIcon />}>ADD</Button>
-        </div>
-      </a>
-    </Link>
+        </a>
+      </Link>
+      <Button
+        onClick={() =>  addToCart(item.id)}
+        variant="outlined"
+        endIcon={<AddShoppingCartIcon />}>
+        ADD
+      </Button>
+    </div>
   );
 };
 
