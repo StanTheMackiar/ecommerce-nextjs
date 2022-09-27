@@ -10,7 +10,7 @@ const shoppingContext = createContext();
 const ShoppingProvider = ({ children }) => {
   const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
 
-  const { products, cart, totalAmount, totalProducts, isOpen } = state;
+  const { products, cart, totalAmount, totalProducts,} = state;
 
   console.log(cart);
 
@@ -60,7 +60,6 @@ const ShoppingProvider = ({ children }) => {
     cart,
     totalAmount,
     totalProducts,
-    isOpen,
     addFromCart,
     addToCart,
     delFromCart,

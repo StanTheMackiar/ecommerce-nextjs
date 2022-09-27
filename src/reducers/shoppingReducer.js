@@ -4,7 +4,6 @@ import { TYPES } from "../actions/shoppingActions";
 export const shoppingInitialState = {
   products: productsList,
   cart: [],
-  isOpen: false,
   totalAmount: 0,
   totalProducts: 0,
 };

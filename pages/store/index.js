@@ -1,73 +1,24 @@
-import React, { useState } from "react";
+
+import { useContext } from "react";
 import FilterProducts from "../../components/Filters/FilterProducts";
 import Layout from "../../components/Layout/Layout";
 import Card from "../../components/Products/Card/Card";
 import { getItems } from "../../services/itemServices";
+import filtersContext from "../../src/context/filtersContext";
 import styles from "../../styles/Store.module.css";
 
 const Store = ({ products }) => {
-  const [price, setPrice] = useState({ priceFrom: "", priceTo: "" });
 
-  const { priceFrom, priceTo } = price;
+  const {filterProducts, sportsTrue, filterToSports} = useContext(filtersContext)
 
-  const [filterToSports, setFilterToSports] = useState({
-    basket: false,
-    ciclyng: false,
-    soccer: false,
-    voley: false,
-    fitness: false,
-  });
-
-  const sportsName = Object.keys(filterToSports);
-
-  let sportsTrue = [];
-  sportsName.map((sport) => filterToSports[sport] && sportsTrue.push(sport));
-
-  console.log(sportsTrue);
-
-  const onPriceInputChange = (name, value) => {
-    setPrice({
-      ...price,
-      [name]: value,
-    });
-  };
-
-  const onCheckboxClick = (name, checked) => {
-    setFilterToSports({
-      ...filterToSports,
-      [name]: checked,
-    });
-  };
-
-  const filterProducts = () => {
-    if (priceFrom < 0 && priceTo < 0) return products;
-    if (priceFrom && !priceTo)
-      return products.filter((product) => product.price >= priceFrom);
-    if (!priceFrom && priceTo)
-      return products.filter((product) => product.price <= priceTo);
-    if (priceFrom && priceTo)
-      return products.filter(
-        (products) => products.price >= priceFrom && products.price <= priceTo
-      );
-
-    return products;
-  };
-
-  let displayedProducts = filterProducts();
-
+  let displayedProducts = filterProducts(products);
+  
   return (
     <Layout title="Store">
       <h1>ALL PRODUCTS</h1>
       <section className={styles.container}>
         <div className={styles.filterProducts}>
-          <FilterProducts
-            products={products}
-            priceFrom={priceFrom}
-            priceTo={priceTo}
-            sportsName={sportsName}
-            onCheckboxClick={onCheckboxClick}
-            onPriceInputChange={onPriceInputChange}
-          />
+          <FilterProducts/>
         </div>
         {sportsTrue.length === 0 && (
           <div className={styles.displayedProducts}>

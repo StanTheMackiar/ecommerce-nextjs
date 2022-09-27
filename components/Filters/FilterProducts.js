@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import styles from "./FilterProducts.module.css";
 import FilterPrice  from "./FilterPrice";
 import FilterSports from "./FilterSports";
+import filtersContext from "../../src/context/filtersContext";
 
-export const FilterProducts = ({ priceFrom, priceTo, sportsName, onPriceInputChange, onCheckboxClick }) => {
+export const FilterProducts = () => {
 
+  const { priceFrom, priceTo, sportsName, onPriceInputChange, onCheckboxClick } = useContext(filtersContext)
 
   return (
     <div className={styles.container}>

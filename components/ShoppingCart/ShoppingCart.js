@@ -1,4 +1,4 @@
-import { Button, Input } from "@mui/material";
+import { Button } from "@mui/material";
 import Link from "next/link";
 import React, { useContext } from "react";
 import shoppingContext from "../../src/context/shoppingContext";
@@ -12,9 +12,6 @@ const ShoppingCart = () => {
     totalAmount,
     totalProducts,
     clearCart,
-    openCart,
-    closeCart,
-    isOpen,
   } = useContext(shoppingContext);
 
   return (

@@ -7,7 +7,7 @@ import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
-const primaryColor = {
+export const primaryColor = {
   color: "rgb(35, 112, 228)",
 };
 
