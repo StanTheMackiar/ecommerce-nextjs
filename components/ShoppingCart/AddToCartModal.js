@@ -63,7 +63,7 @@ const AddToCartModal = ({ handleClose, open, item }) => {
               <RemoveIcon sx={primaryColor} />
             </IconButton>
           </div>
-          <p>Amount: {cart.length > 0 && getProductInCart.amount}</p>
+          <p>Amount: {cart.length > 0 && getProductInCart().amount}</p>
 
           <Button
             sx={{ m: "0.2rem" }}

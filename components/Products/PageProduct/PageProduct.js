@@ -10,8 +10,10 @@ import AddToCartModal from "../../ShoppingCart/AddToCartModal";
 
 const PageProduct = ({ item }) => {
   const [value, setValue] = useState(0);
-  const { handleOpen, handleClose, open } = useContext(modalContext);
+
+  const { open, handleClose, handleOpen } = useContext(modalContext);
   const { addToCart } = useContext(shoppingContext);
+
 
   const handleButton = (item) => {
     addToCart(item.id);
