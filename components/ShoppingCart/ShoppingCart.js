@@ -33,7 +33,7 @@ const ShoppingCart = () => {
             size="large"
             className={styles.buttons}
             variant="outlined"
-            onClick={() => delAllFromCart(id)}
+            onClick={() => clearCart()}
             startIcon={<DeleteForeverIcon sx={primaryColor} />}>
             Clean Cart
           </Button>

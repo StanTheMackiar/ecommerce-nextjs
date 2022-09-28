@@ -1,8 +1,8 @@
-import { productsList } from "../../pages/api/products";
 import { TYPES } from "../actions/shoppingActions";
+import products from "../../src/products/inventary.json"
 
 export const shoppingInitialState = {
-  products: productsList,
+  products,
   cart: [],
   totalAmount: 0,
   totalProducts: 0,

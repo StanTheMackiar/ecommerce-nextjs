@@ -6,17 +6,12 @@ import { getItems } from "../../services/itemServices";
 import filtersContext from "../../src/context/filtersContext";
 import styles from "../../styles/Store.module.css";
 
-const Store = ({ products }) => {
-  const { filterProducts, sportsTrue, filterToSports, filterSearch } =
+const Store = ({products}) => {
+  const { sportsTrue, filterToSports, filterProducts } =
     useContext(filtersContext);
 
-  let searchResults =  filterSearch(products)
-  let filterResults = filterProducts(products);
 
-  const displayedProducts = [...new Set([ 
-    ...searchResults,
-    ...filterResults,
-  ])];
+  const displayedProducts = filterProducts(products);
 
   return (
     <Layout title="Store">
@@ -31,7 +26,7 @@ const Store = ({ products }) => {
             <div className={styles.productsGrid}>
               {displayedProducts.map((el) => (
                   <Card
-                    key={el.id}
+                    key={el.id + 'search'}
                     item={el}
                   />
               ))}

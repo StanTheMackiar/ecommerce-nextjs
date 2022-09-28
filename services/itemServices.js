@@ -1,8 +1,8 @@
-import { productsList } from "../pages/api/products";
+import inventary from '../src/products/inventary.json'
 
 
 export async function getItems(){
-    const products = productsList;
+    const products = inventary;
     return products
 } 
 

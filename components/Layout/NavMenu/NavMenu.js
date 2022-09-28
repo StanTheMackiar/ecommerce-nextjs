@@ -1,8 +1,8 @@
 import Link from "next/link";
 import styles from "./NavMenu.module.css";
-import SearchBar from "../HeaderTop/SearchBar";
+import SearchBar from "../Header/HeaderTop/SearchBar";
 import { useState } from "react";
-import { categories } from "../ToggleMenu/Items";
+import { categories } from "../Header/ToggleMenu/Items";
 import { Fade, ListItemButton } from "@mui/material";
 
 

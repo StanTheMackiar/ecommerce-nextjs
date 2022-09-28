@@ -1,11 +1,13 @@
+import { useRouter } from "next/router";
 import { createContext, useState } from "react";
-import shoppingContext from "./shoppingContext";
 
 const filtersContext = createContext();
 
 const FiltersProvider = ({ children }) => {
+  const router = useRouter();
+
   const [price, setPrice] = useState({ priceFrom: "", priceTo: "" });
-  const [search, setSearch] = useState("");
+  const [results, setResults] = useState([]);
   const { priceFrom, priceTo } = price;
 
   const [filterToSports, setFilterToSports] = useState({
@@ -49,11 +51,23 @@ const FiltersProvider = ({ children }) => {
     return products;
   };
 
-  const filterSearch = (products) => {
-    return []
+  const handleSearch = (e) => {
+    const search = e.target.value;
+    if (search.length > 0) {
+      if (e.keyCode === 13) {
+        return router.push(`/search?q=${search}`);
+      }
+      fetch(`/api/search?q=${search}`)
+        .then((res) => res.json())
+        .then((searchResults) => {
+          setResults(searchResults);
+        });
+    } else setResults([]);
   };
 
-  const handleSearch = (e) => setSearch(e.target.value);
+  const handleListClick = (e) => {
+    setResults([])
+  }
 
   const data = {
     filterProducts,
@@ -68,8 +82,9 @@ const FiltersProvider = ({ children }) => {
     price,
     setPrice,
     handleSearch,
-    search,
-    filterSearch,
+    results,
+    setResults,
+    handleListClick,
   };
 
   return (
