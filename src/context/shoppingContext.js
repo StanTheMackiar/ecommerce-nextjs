@@ -10,9 +10,7 @@ const shoppingContext = createContext();
 const ShoppingProvider = ({ children }) => {
   const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
 
-  const { products, cart, totalAmount, totalProducts,} = state;
-
-  console.log(cart);
+  const { products, cart, totalAmount, totalProducts } = state;
 
   const openCart = () => {
     dispatch({ type: TYPES.OPEN_CART })

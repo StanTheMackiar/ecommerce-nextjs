@@ -2,9 +2,10 @@ import { Button } from "@mui/material";
 import Link from "next/link";
 import React, { useContext } from "react";
 import shoppingContext from "../../src/context/shoppingContext";
-import CartItem from "./CartItem";
+import CartItem, { primaryColor } from "./CartItem";
 import OrderInfo from "./OrderInfo";
 import styles from "./ShoppingCart.module.css";
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
 const ShoppingCart = () => {
   const {
@@ -29,10 +30,13 @@ const ShoppingCart = () => {
               />
             ))}
             <Button
-              variant="outlined"
-              onClick={clearCart}>
-              Clear Cart
-            </Button>
+            size="large"
+            className={styles.buttons}
+            variant="outlined"
+            onClick={() => delAllFromCart(id)}
+            startIcon={<DeleteForeverIcon sx={primaryColor} />}>
+            Clean Cart
+          </Button>
           </section>
 
           <OrderInfo

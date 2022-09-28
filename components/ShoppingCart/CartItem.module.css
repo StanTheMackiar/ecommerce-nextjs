@@ -14,6 +14,10 @@
     align-items: center;
     margin: 0.5rem;
 }
+.buttonsContainer {
+    display: flex;
+    flex-direction: row;
+}
 .image {
     margin: 1rem;
     padding: 0.5rem;
@@ -31,6 +35,9 @@
 }
 
 @media (max-width: 800px) {
+    .container {
+        justify-content: space-evenly;
+    }
     .subcontainer {
         flex-direction: column;
         margin: 0;
@@ -43,9 +50,10 @@
     }
     .buttonsContainer {
         margin: 0;
+        flex-direction: column;
     }
     .buttons {
         margin: 0;
-        font-size: 12px;
+        font-size: 15px;
     }
 }

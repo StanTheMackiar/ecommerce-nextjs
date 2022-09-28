@@ -5,9 +5,9 @@ import Backdrop from "@mui/material/Backdrop";
 import Image from "next/image";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-import { primaryColor } from "./CartItem";
 import shoppingContext from "../../src/context/shoppingContext";
 import Link from "next/link";
+import { primaryColor } from "../ShoppingCart/CartItem";
 
 const styleModal = {
   position: "absolute",
@@ -25,13 +25,15 @@ const styleModal = {
 
 const AddToCartModal = ({ handleClose, open, item }) => {
 
-  const { delFromCart, addFromCart, cart } = useContext(shoppingContext);
+
+  const { cart, addFromCart, delFromCart } = useContext(shoppingContext)
+
 
   const getProductInCart = () => {
-    const productInCart = cart.find(el => el.id === item.id);
-    return productInCart
+    return cart.find(el => el.id === item.id)
   }
 
+  let productInCart = getProductInCart();
 
   return (
     <Modal
@@ -63,7 +65,7 @@ const AddToCartModal = ({ handleClose, open, item }) => {
               <RemoveIcon sx={primaryColor} />
             </IconButton>
           </div>
-          <p>Amount: {cart.length > 0 && getProductInCart().amount}</p>
+          <p>Amount: {productInCart && productInCart.amount}</p>
 
           <Button
             sx={{ m: "0.2rem" }}

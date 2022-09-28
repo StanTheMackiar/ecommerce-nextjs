@@ -5,6 +5,7 @@
     align-items: center;
     border-bottom: thin solid lightblue;
     margin-bottom: 1rem;
+    background-color: white;
 }
 .nav {
     display: flex;

@@ -1,5 +1,7 @@
 .latestSection {
     text-align: center;
+    width: 80%;
+    margin: 0 auto;
 }
 .latestGrid {
     display: grid;
@@ -7,8 +9,11 @@
     gap: 2rem; 
 }
 @media (max-width: 800px) {
+    .latestSection {
+        width: auto;
+    }
     .latestGrid {
-        grid-template-columns: repeat(auto-fit, minmax(10.7em, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(9em, 1fr));
         gap: 1rem;
     }
 }

@@ -1,16 +1,30 @@
 import { Button } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useContext } from "react";
 import { convertToPath } from "../../../lib/utils";
 import styles from "./Card.module.css";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import { useContext, useState } from "react";
+import AddToCartModal from "../../Modal/AddToCartModal";
+import shoppingContext from "../../../src/context/shoppingContext";
+
+
+
 
 const Card = ({ item }) => {
-  console.log(item);
+  const { addToCart } = useContext(shoppingContext)
 
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  const handleButton = (item) => {
+    addToCart(item.id)
+    handleOpen()
+  }
   return (
     <>
+    <AddToCartModal item={item} handleClose={handleClose} open={open}/>
       <div
         key={item.id}
         className={styles.latestItems}>
@@ -28,7 +42,9 @@ const Card = ({ item }) => {
           </a>
         </Link>
         <Button
+          onClick={() => handleButton(item)}
           variant="outlined"
+          size="small"
           endIcon={<AddShoppingCartIcon />}>
           ADD
         </Button>

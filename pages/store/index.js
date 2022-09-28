@@ -2,21 +2,21 @@ import { useContext } from "react";
 import FilterProducts from "../../components/Filters/FilterProducts";
 import Layout from "../../components/Layout/Layout";
 import Card from "../../components/Products/Card/Card";
-import AddToCartModal from "../../components/ShoppingCart/AddToCartModal";
 import { getItems } from "../../services/itemServices";
 import filtersContext from "../../src/context/filtersContext";
-import modalContext from "../../src/context/modalContext";
-import shoppingContext from "../../src/context/shoppingContext";
 import styles from "../../styles/Store.module.css";
 
 const Store = ({ products }) => {
-  const { filterProducts, sportsTrue, filterToSports } =
+  const { filterProducts, sportsTrue, filterToSports, filterSearch } =
     useContext(filtersContext);
 
-  const { handleOpen, handleClose, open } = useContext(modalContext);
-  const { addToCart } = useContext(shoppingContext);
+  let searchResults =  filterSearch(products)
+  let filterResults = filterProducts(products);
 
-  let displayedProducts = filterProducts(products);
+  const displayedProducts = [...new Set([ 
+    ...searchResults,
+    ...filterResults,
+  ])];
 
   return (
     <Layout title="Store">
@@ -30,17 +30,10 @@ const Store = ({ products }) => {
             <h3>Showing all products ({displayedProducts.length})</h3>
             <div className={styles.productsGrid}>
               {displayedProducts.map((el) => (
-                <>
-                  <AddToCartModal
-                    handleClose={handleClose}
-                    open={open}
-                    item={el}
-                  />
                   <Card
                     key={el.id}
                     item={el}
                   />
-                </>
               ))}
             </div>
           </div>

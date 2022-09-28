@@ -10,7 +10,7 @@
     align-items: center;
     width: 50%;
     justify-content: center;
-    cursor: pointer;
+    padding: 2rem;
 }
 .title {
     color: rgb(35, 112, 228);

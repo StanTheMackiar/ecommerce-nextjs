@@ -5,7 +5,7 @@ import { Button, IconButton } from "@mui/material";
 import Image from "next/image";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import DeleteIcon from '@mui/icons-material/Delete';
 
 export const primaryColor = {
   color: "rgb(35, 112, 228)",
@@ -37,18 +37,26 @@ const CartItem = ({ products }) => {
           </p>
         </div>
         <div className={styles.buttonsContainer}>
-          <IconButton onClick={() => addFromCart(id)}>
-            <AddIcon className={styles.buttons} sx={primaryColor} />
-          </IconButton>
-          <IconButton onClick={() => delFromCart(id)}>
-            <RemoveIcon  className={styles.buttons} sx={primaryColor} />
-          </IconButton>
+          <div>
+            <IconButton onClick={() => addFromCart(id)}>
+              <AddIcon
+                className={styles.buttons}
+                sx={primaryColor}
+              />
+            </IconButton>
+            <IconButton onClick={() => delFromCart(id)}>
+              <RemoveIcon
+                className={styles.buttons}
+                sx={primaryColor}
+              />
+            </IconButton>
+          </div>
           <Button
             size="small"
             className={styles.buttons}
             variant="outlined"
             onClick={() => delAllFromCart(id)}
-            startIcon={<DeleteForeverIcon sx={primaryColor} />}>
+            startIcon={<DeleteIcon sx={primaryColor} />}>
             Remove All
           </Button>
         </div>

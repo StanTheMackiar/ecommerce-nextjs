@@ -9,7 +9,6 @@ import "../styles/globals.css";
 import Head from "next/head";
 import { ShoppingProvider } from "../src/context/shoppingContext";
 import { FiltersProvider } from "../src/context/filtersContext";
-import { ModalProvider } from "../src/context/modalContext";
 
 // Client-side cache shared for the whole session
 // of the user in the browser.
@@ -33,13 +32,11 @@ export default function MyApp(props) {
 				build upon. */}
 
         <CssBaseline />
-        <ModalProvider>
         <FiltersProvider>
           <ShoppingProvider>
             <Component {...pageProps} />
           </ShoppingProvider>
         </FiltersProvider>
-        </ModalProvider>
       </ThemeProvider>
     </CacheProvider>
   );

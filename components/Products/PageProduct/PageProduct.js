@@ -5,13 +5,15 @@ import styles from "./PageProduct.module.css";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 import shoppingContext from "../../../src/context/shoppingContext";
-import modalContext from "../../../src/context/modalContext";
-import AddToCartModal from "../../ShoppingCart/AddToCartModal";
+import AddToCartModal from "../../Modal/AddToCartModal";
 
 const PageProduct = ({ item }) => {
   const [value, setValue] = useState(0);
 
-  const { open, handleClose, handleOpen } = useContext(modalContext);
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   const { addToCart } = useContext(shoppingContext);
 
 

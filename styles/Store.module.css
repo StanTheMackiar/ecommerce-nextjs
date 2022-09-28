@@ -20,7 +20,7 @@
         flex-direction: column;
     }
     .productsGrid {
-        grid-template-columns: repeat(auto-fit, minmax(10.7em, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(9em, 1fr));
         gap: 1rem;
     }
     .displayedProducts {

@@ -1,4 +1,4 @@
-import { Button, Input } from "@mui/material";
+import { Button, Input, TextField } from "@mui/material";
 import React from "react";
 import styles from "./OrderInfo.module.css"
 
@@ -21,6 +21,12 @@ const OrderInfo = ({totalAmount, totalProducts}) => {
         />
         <Button variant="outlined">Apply</Button>
       </form>
+      <TextField
+      sx={{marginTop: "1rem"}}
+          label="Any special instruction?"
+          multiline
+          rows={4}
+        />
       <br />
       <p className={styles.total}>Total <span className={styles.span}>$ {totalAmount}</span></p>
       <div className={styles.children}>

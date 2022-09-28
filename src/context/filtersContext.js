@@ -1,10 +1,11 @@
 import { createContext, useState } from "react";
+import shoppingContext from "./shoppingContext";
 
 const filtersContext = createContext();
 
-const FiltersProvider = ({children}) => {
-    const [price, setPrice] = useState({ priceFrom: "", priceTo: "" });
-
+const FiltersProvider = ({ children }) => {
+  const [price, setPrice] = useState({ priceFrom: "", priceTo: "" });
+  const [search, setSearch] = useState("");
   const { priceFrom, priceTo } = price;
 
   const [filterToSports, setFilterToSports] = useState({
@@ -19,7 +20,6 @@ const FiltersProvider = ({children}) => {
 
   let sportsTrue = [];
   sportsName.map((sport) => filterToSports[sport] && sportsTrue.push(sport));
-
 
   const onPriceInputChange = (name, value) => {
     setPrice({
@@ -49,26 +49,33 @@ const FiltersProvider = ({children}) => {
     return products;
   };
 
+  const filterSearch = (products) => {
+    return []
+  };
 
+  const handleSearch = (e) => setSearch(e.target.value);
 
-    const data = {
-        filterProducts,
-        onCheckboxClick,
-        onPriceInputChange,
-        sportsTrue,
-        sportsName,
-        filterToSports,
-        setFilterToSports,
-        priceFrom,
-        priceTo,
-        price,
-        setPrice
-    }
+  const data = {
+    filterProducts,
+    onCheckboxClick,
+    onPriceInputChange,
+    sportsTrue,
+    sportsName,
+    filterToSports,
+    setFilterToSports,
+    priceFrom,
+    priceTo,
+    price,
+    setPrice,
+    handleSearch,
+    search,
+    filterSearch,
+  };
 
-    return (
-        <filtersContext.Provider value={data}>{children}</filtersContext.Provider>
-    )
-}
+  return (
+    <filtersContext.Provider value={data}>{children}</filtersContext.Provider>
+  );
+};
 
-export { FiltersProvider }
-export default filtersContext
+export { FiltersProvider };
+export default filtersContext;
