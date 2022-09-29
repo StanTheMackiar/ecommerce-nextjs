@@ -3,13 +3,13 @@
     position: absolute;
     z-index: 999;
     width: 100%;
-    top: 23px;
+    top: 24px;
     border-radius: 0.3rem;
 }
 .listContainer {
     margin: 0;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0 0 5px rgba(173, 216, 230, 0.788);
+    box-shadow: 0 0 3px rgba(173, 216, 230, 0.788);
     list-style: none;
 }
 .listItem {
@@ -23,14 +23,8 @@
     background-color: rgb(35, 112, 228);
     color: white;
 }
-
 @media (max-width: 850px) {
-    .searchBar {
-        width: 60%;
-        justify-content: center;
-        padding-bottom: 0.5rem;
-    }
     .searchList {
-        width: 100%;
+        width: 90%;
     }
 }  

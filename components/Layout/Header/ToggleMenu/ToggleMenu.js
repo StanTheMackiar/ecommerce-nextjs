@@ -19,6 +19,7 @@ import {
   AccordionSummary,
 } from "./StyledComponents";
 import { about, categories } from "./Items";
+import SearchBar from "../HeaderTop/SearchBar";
 
 const closeButtonStyles = {
   position: "absolute",
@@ -39,10 +40,13 @@ const ToggleMenu = () => {
 
   const list = () => (
     <Box
-      sx={{ width: "300px" }}
-      role="presentation"
-      onKeyDown={() => handleToggle(false)}>
-      <CloseIcon sx={closeButtonStyles} onClick={() => handleToggle(false)}/>
+      sx={{ width: "350px", display: "flex", flexDirection: "column",  }}
+      role="presentation">
+      <CloseIcon
+        sx={closeButtonStyles}
+        onClick={() => handleToggle(false)}
+      />
+
       <div className={styles.login}>
         <AccountCircleIcon sx={{ margin: "0.5rem", fontSize: "30px" }} />
         <Link href="/login">
@@ -51,8 +55,15 @@ const ToggleMenu = () => {
           </a>
         </Link>
       </div>
+
+      <div className={styles.searchBar}>
+      <SearchBar />
+      </div>
+
       {categories.map((category) => (
-        <Accordion key={category.name}>
+        <Accordion
+          key={category.name}
+          sx={{ m: "0.5rem 1rem" }}>
           <AccordionSummary
             aria-controls="panel1a-content"
             id="panel1a-header">
@@ -63,8 +74,12 @@ const ToggleMenu = () => {
               component="nav"
               aria-label="categories">
               {category.type.map((el) => (
-                <ListItemButton key={el.name + 'list'}>
-                  <Link href={el.url}><a><ListItemText primary={el.name}/></a></Link>
+                <ListItemButton key={el.name + "list"}>
+                  <Link href={el.url}>
+                    <a>
+                      <ListItemText primary={el.name} />
+                    </a>
+                  </Link>
                 </ListItemButton>
               ))}
             </List>
@@ -73,6 +88,7 @@ const ToggleMenu = () => {
       ))}
 
       <List
+        sx={{ m: "0.5rem 1rem" }}
         component="nav"
         aria-label="categories">
         {about.map((category) => (
@@ -92,7 +108,7 @@ const ToggleMenu = () => {
   );
 
   return (
-    <div>
+    <div className={styles.container}>
       <MenuIcon
         sx={{
           fontSize: "30px",

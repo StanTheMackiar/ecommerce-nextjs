@@ -56,13 +56,6 @@ const NavMenu = () => {
           </div>
         ))}
       </nav>
-
-      <div className={styles.searchBar}>
-        <SearchBar
-          color={"gray"}
-          className={styles.searchBar}
-        />
-      </div>
     </section>
   );
 };

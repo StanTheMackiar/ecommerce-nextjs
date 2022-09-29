@@ -42,10 +42,6 @@
     color: rgb(30, 92, 185);
     font-weight: bold;
 }
-
-.searchBar {
-    display: none;
-}
 .cart {
     padding-right: 2rem;
 }
@@ -53,9 +49,5 @@
 @media (max-width: 800px) {
     .nav {
         display: none;
-    }
-    .searchBar {
-        display: block;
-        padding: 1rem;
     }
 }

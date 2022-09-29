@@ -11,8 +11,8 @@ const Cart = () => {
   return (
     <section className={styles.containerRight}>
       <nav className={styles.nav}>
-        <Link href="/help">
-          <a className={styles.link}>Help</a>
+        <Link href="/about">
+          <a className={styles.link}>About</a>
         </Link>
         <Link href="/login">
           <a className={styles.link}>

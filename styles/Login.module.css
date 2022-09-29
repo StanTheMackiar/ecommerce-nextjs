@@ -1,0 +1,12 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 30em;
+    margin:  0 auto;
+}
+
+@media (max-width: 800px) {
+    .form {
+        width: 20em;
+    }
+}
