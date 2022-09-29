@@ -16,6 +16,12 @@
 
 @media (max-width: 800px) {
     .form {
-        width: 19em;
+        width: 20em;
+    }
+    .nameDiv {
+        flex-direction: column;
+    }
+    .password {
+        flex-direction: column;
     }
 }
