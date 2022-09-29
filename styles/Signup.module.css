@@ -1,8 +1,17 @@
 .form {
     display: flex;
     flex-direction: column;
-    width: 30em;
+    width: 40em;
     margin:  0 auto 2rem auto;
+    text-align: left;
+}
+.nameDiv {
+    display: flex;
+    flex-direction: row;
+}
+.password {
+    display: flex;
+    flex-direction: row;
 }
 
 @media (max-width: 800px) {

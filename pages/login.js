@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import styles from "../styles/Login.module.css";
+import Link from "next/link";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -48,14 +49,16 @@ const Login = () => {
             helperText={
               errors.user?.message ||
               (errors.user?.type === "maxLength" &&
-                "The username can't have contains more of 15 characters")
+                "Username cannot contain more than 15 characters")
             }
           />
         </FormControl>
 
         <FormControl sx={{ m: 1 }}>
           <TextField
-            {...register("password", { required: "Please enter a valid user name" })}
+            {...register("password", {
+              required: "Please enter a valid user name",
+            })}
             error={errors.password ? true : false}
             helperText={errors.password?.message}
             label="Password"
@@ -83,6 +86,18 @@ const Login = () => {
           type="submit">
           Login
         </Button>
+        <p>
+          Did you forget your password?{" "}
+          <Link href="/resetpass">
+            <a style={{ color: "rgb(41, 110, 212)" }}>Reset password</a>
+          </Link>
+        </p>
+        <p>
+          You do not have an account?{" "}
+          <Link href="/signup">
+            <a style={{ color: "rgb(41, 110, 212)" }}>Register now</a>
+          </Link>
+        </p>
       </form>
     </Layout>
   );
