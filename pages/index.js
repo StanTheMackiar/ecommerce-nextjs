@@ -48,12 +48,10 @@ export default function Home({ products }) {
         <div className={styles.imageSection}>
           <h2 className={styles.subtitle}>There are no limits!</h2>
           <div className={styles.image}>
-            <Image
+            <img
               alt="No limits gif"
-              width={350}
-              height={400}
+              width={300}
               src="/img/gif.gif"
-              objectFit="contain"
             />
           </div>
         </div>
