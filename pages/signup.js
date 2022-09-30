@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../components/Layout/Layout";
 import styles from "../styles/Signup.module.css";
-import { Controller, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
+
 import {
   Button,
   Checkbox,
@@ -34,6 +35,7 @@ const Signup = () => {
     watch,
     formState: { errors },
     getValues,
+    control,
   } = useForm();
 
   const errorMsg = {
@@ -60,6 +62,7 @@ const Signup = () => {
   const onSubmit = (data) => console.log(data, "Enviado");
 
   console.log(errors);
+  console.log(watch("phone"));
 
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
@@ -81,7 +84,7 @@ const Signup = () => {
 
   return (
     <Layout title="Sign Up">
-      <h1>Sign Up</h1>
+      <h1>Create New Account</h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className={styles.form}>
@@ -93,7 +96,7 @@ const Signup = () => {
                 maxLength: 25,
               })}
               type="text"
-              label="Name"
+              label="First Name"
               variant="outlined"
               error={Boolean(errors.name)}
               helperText={
@@ -120,24 +123,40 @@ const Signup = () => {
           </FormControl>
         </div>
 
-        <FormControl sx={{ m: 1 }}>
-          <TextField
-            {...register("email", {
-              required: fieldRequired,
-              pattern: /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/,
-            })}
-            type="text"
-            label="e-mail"
-            variant="outlined"
-            error={Boolean(errors.email)}
-            helperText={
-              errors.email?.message ||
-              (errors.email?.type === "pattern" && emailRegEx)
-            }
-          />
-        </FormControl>
+        <div className={styles.emailBirth}>
+          <FormControl sx={{ m: 1, flex: 5 }}>
+            <TextField
+              {...register("email", {
+                required: fieldRequired,
+                pattern: /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/,
+              })}
+              type="text"
+              label="e-mail"
+              variant="outlined"
+              error={Boolean(errors.email)}
+              helperText={
+                errors.email?.message ||
+                (errors.email?.type === "pattern" && emailRegEx)
+              }
+            />
+          </FormControl>
+          <FormControl sx={{ m: 1, flex: 5 }}>
+            <TextField
+              {...register("date", {
+                required: fieldRequired,
+              })}
+              type="date"
+              label="Date of Birth"
+              InputLabelProps={{
+                shrink: true,
+              }}
+              variant="outlined"
+              error={Boolean(errors.date)}
+              helperText={errors.date?.message}
+            />
+          </FormControl>
+        </div>
 
-        <div className={styles.password}>
           <FormControl sx={{ m: 1, flex: "auto" }}>
             <TextField
               {...register("password", {
@@ -199,7 +218,6 @@ const Signup = () => {
               }}
             />
           </FormControl>
-        </div>
 
         <h3 style={{ textAlign: "center", color: "gray" }}>Shipping Address</h3>
 
@@ -278,23 +296,64 @@ const Signup = () => {
           </FormControl>
         )}
 
-        <FormControl sx={{ m: 1 }}>
-          <TextField
-            {...register("phone", {
+        <div className={styles.phoneAdress}>
+          <FormControl sx={{ m: 1, flex: "auto" }}>
+                <TextField
+                  {...register("phone", {
+                    required: fieldRequired,
+                    pattern: /[]/
+                  })}
+                  type="number"
+                  label="Phone number"
+                  variant="outlined"
+                  error={Boolean(errors.phone)}
+                  helperText={
+                    errors.phone?.message ||
+                    (errors.phone?.type === "pattern" && phone)
+                  }
+                />
+          </FormControl>
+
+          <FormControl sx={{ m: 1, flex: "auto" }}>
+            <TextField
+             {...register("address", {
               required: fieldRequired,
-              pattern:
-                /^(\(\+?\d{2,3}\)[\*|\s|\-|\.]?(([\d][\*|\s|\-|\.]?){6})(([\d][\s|\-|\.]?){2})?|(\+?[\d][\s|\-|\.]?){8}(([\d][\s|\-|\.]?){2}(([\d][\s|\-|\.]?){2})?)?)$/,
             })}
-            type="text"
-            label="Phone number"
-            variant="outlined"
-            error={Boolean(errors.phone)}
-            helperText={
-              errors.phone?.message ||
-              (errors.phone?.type === "pattern" && phone)
-            }
-          />
-        </FormControl>
+              type="text"
+              label="Address"
+              variant="outlined"
+              error={Boolean(errors.address)}
+              helperText={errors.address?.message}
+            />
+          </FormControl>
+        </div>
+
+        <FormControl sx={{ m: 1 }}>
+            <TextField
+             {...register("postal", {
+              required: fieldRequired,
+            })}
+              type="text"
+              label="Postal Code"
+              variant="outlined"
+              error={Boolean(errors.address)}
+              helperText={errors.address?.message}
+            />
+          </FormControl>
+          <FormControl sx={{ m: 1 }}>
+            <TextField
+             {...register("facturation", {
+              required: fieldRequired,
+            })}
+              type="text"
+              label="Facturation Name"
+              variant="outlined"
+              error={Boolean(errors.address)}
+              helperText={errors.address?.message}
+            />
+          </FormControl>
+
+
 
         <FormControl
           required

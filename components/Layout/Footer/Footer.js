@@ -13,6 +13,7 @@ const Footer = () => {
     color: "rgb(35, 112, 228)",
     fontSize: "40px",
     margin: "0.5rem",
+    cursor: "pointer",
   };
 
   return (

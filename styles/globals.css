@@ -2,10 +2,18 @@
   box-sizing: border-box;
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
+body {
+  position: relative;
+  min-height: 100vh;
   font-family: 'Roboto', sans-serif;
+}
+main {
+  padding-bottom: 17rem;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 a {
   color: inherit;

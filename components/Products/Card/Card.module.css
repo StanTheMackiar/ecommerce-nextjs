@@ -19,3 +19,19 @@
     margin: 0.5rem;
     color: rgb(104, 101, 101);
 }
+.tag {
+    position: relative;
+    z-index: 50;
+    top: 40px;
+    right: 60px;
+}
+.image {
+    border: thin solid rgba(173, 216, 230, 0.603);
+    padding: 0.2rem;
+    border-radius: 0.5rem;
+}
+@media (max-width: 800px) {
+    .tag {
+        right: 47px;
+    }
+}

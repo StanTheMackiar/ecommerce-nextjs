@@ -13,6 +13,14 @@
     display: flex;
     flex-direction: row;
 }
+.emailBirth {
+    display: flex;
+    flex-direction: row;
+}
+.phoneAdress {
+    display: flex;
+    flex-direction: row;
+}
 
 @media (max-width: 800px) {
     .form {
@@ -22,6 +30,12 @@
         flex-direction: column;
     }
     .password {
+        flex-direction: column;
+    }
+    .emailBirth {
+        flex-direction: column;
+    }
+    .phoneAdress {
         flex-direction: column;
     }
 }
