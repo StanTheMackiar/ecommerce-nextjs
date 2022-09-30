@@ -7,7 +7,6 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { useContext, useState } from "react";
 import AddToCartModal from "../../Modal/AddToCartModal";
 import shoppingContext from "../../../src/context/shoppingContext";
-import newTag from "../../../public/img/new.png";
 
 const Card = ({ item, tag = false }) => {
   const { addToCart } = useContext(shoppingContext);
@@ -38,7 +37,7 @@ const Card = ({ item, tag = false }) => {
                   width={35}
                   height={35}
                   alt="new tag"
-                  src={newTag}
+                  src="/img/new.png"
                 />
               </div>
             )}

@@ -4,7 +4,6 @@ import styles from "../styles/Home.module.css";
 import Card from "../components/Products/Card/Card";
 import { Button } from "@mui/material";
 import Image from "next/image"
-import gif from "../public/img/gif.gif"
 
 
 export default function Home({ products }) {
@@ -53,7 +52,7 @@ export default function Home({ products }) {
               alt="No limits gif"
               width={350}
               height={400}
-              src={gif}
+              src="/img/gif.gif"
               objectFit="contain"
             />
           </div>
